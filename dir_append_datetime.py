@@ -7,7 +7,7 @@ import os
 # import sys
 import datetime
 
-def dir_append_datetime(src, dst):
+def dir_append_datetime(src):
     """Function that renames a src directory to a dst directory by appending
     the current datetime into the src directory name.
     """
