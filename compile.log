@@ -1,0 +1,15 @@
+mkdir -p autogen
+echo "const char SVN_REVISION[] = \"47446M\";" > autogen/svn_revision.h
+echo "const int BUILD_NUMBER = 0;" >> autogen/svn_revision.h
+Building file: /home/wjn/workspace/qamp-application/qamp/src/CmdVersion.cpp
+arm-eabi-gcc -O3 -g -Wall -c -fmessage-length=0 -Wpointer-arith -Wundef -Woverloaded-virtual -Wno-write-strings -mno-thumb-interwork -mcpu=arm9 -ffunction-sections -fdata-sections -frtti -I/home/wjn/workspace/qamp-application/qamp/src -I/home/wjn/workspace/qamp-application/qamp/src/timekeeping -I/home/wjn/workspace/qamp-application/qamp/src/tinymt -I/home/wjn/workspace/qamp-application/cpp-sophionlibs/src -I/home/wjn/workspace/qamp-application/cpp-sophionlibs/src/CmdShell -I/home/wjn/workspace/qamp-application/qamp/src/application -I/home/wjn/workspace/qamp-application/qamp/src/unittest -I/home/wjn/workspace/qamp-application/cpp-sophionlibs/test -I/home/wjn/workspace/qamp-application/qamp/test -I/home/wjn/workspace/ecos-config-qamp-ram/include -I/home/wjn/workspace/qamp-application/googletest/include -I/home/wjn/workspace/qamp-application/googlemock/include -Iautogen -I/home/wjn/workspace/qamp-application/qamp/src/unittest/include    -MMD -MP -MF"CmdVersion.d" -MT"CmdVersion.d" -DGMOCK_RENAME_MAIN=1 -DGTEST_OS_ECOS=1 -Wno-undef -Wno-conversion -o"CmdVersion.o" "/home/wjn/workspace/qamp-application/qamp/src/CmdVersion.cpp"
+sed -e 's/VERSION/1.0.0.47446M (build #0)/' ../version.ini.tmpl > version.ini
+Finished building: /home/wjn/workspace/qamp-application/qamp/src/CmdVersion.cpp
+ 
+Building target: qamp-application
+arm-eabi-gcc -nostdlib -L"/home/wjn/workspace/ecos-config-qamp-ram/lib" -L. -Ttarget.ld -mno-thumb-interwork -mcpu=arm9 -Wl,--gc-sections -Wl,-static -g  -o"qamp-application"  ChannelWaveformHandler.o ClientConnection.o CmdBoard.o CmdCalibration.o CmdCCompensation.o CmdCurrentClamp.o CmdDebug.o CmdException.o CmdInjectError.o CmdInstrument.o CmdIOffset.o CmdLED.o CmdPrompt.o CmdQuit.o CmdRandom.o CmdReset.o CmdRsCompensation.o CmdSample.o CmdSearchStability.o CmdSelftest.o CmdServer.o CmdVersion.o CmdVOffset.o CmdWaveform.o DataCollector.o DataPackager.o DataServerProtocol.o DataSpewer.o DataSpewerThread.o DebugWaveformRunner.o DMA.o DMAInterface.o EcosThreadWithCommandQueue.o EcosThreadWithCommandQueueEx.o ErrorHandler.o ExceptionHandler.o FlashSafe.o IErrorHandler.o IPPort.o LoadMonitor.o lwiptest.o MemCommands.o NetBufPointer.o NetworkInitialization.o QAmpBoard.o QAmpConfiguration.o QAmp.o QAmpFPGA.o QCmdError.o QCmdLoad.o QCmdRunWaveform.o QueuedCommand.o RandomSource.o ResultConnection.o StabilitySearchFSM.o Synchronized.o TcpConnection.o TcpServer.o TelnetCmdShell.o Waveform.o WaveformHandler.o Alarm.o tcinterrupthandler.o TimerCommands.o TimerCounter.o tinymt32.o CmdParser.o CmdShell.o CmdStringLexer.o CommandAdd.o Command.o CommandHelp.o CommandManager.o Option.o SilentCmdShell.o StdIOCmdShell.o qubeamp_main.o 
+Finished building target: qamp-application
+ 
+arm-eabi-objcopy -O binary qamp-application qamp-application.bin
+make: `qamp-application.bin' is up to date.
+make: `version.ini' is up to date.
